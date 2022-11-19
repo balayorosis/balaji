@@ -1,0 +1,26 @@
+pipeline {
+    
+    agent any
+    
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage ('checkout') {
+            steps {
+               checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/balayorosis/jenkins.git']]])
+            }
+         }
+         stage('docker image') {
+             steps {
+                 script {
+                      sh 'docker build -t balaji/jenkins .'
+                 }
+            
+             }
+         }
+      }
+    }
+
