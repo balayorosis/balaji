@@ -1,4 +1,4 @@
-FROM frolvlad/alpine-glibc
+FROM ubuntu:18.04
 COPY pom.xml /usr/local/service/pom.xml
 COPY src /usr/local/service/src
 WORKDIR /usr/local/service
