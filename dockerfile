@@ -1,4 +1,4 @@
 FROM openjdk:11-jdk
 EXPOSE 8080
-ADD target/Dintegration.jar Dintegration.jar
-CMD ["java","-jar","app.jar"]
+ADD target/prabharan-demo-0.0.1-SNOPSHOT.jar prabharan-demo-0.0.1-SNOPSHOT.jar 
+CMD ["java","-jar","prabharan-demo-0.0.1-SNOPSHOT.jar "]
